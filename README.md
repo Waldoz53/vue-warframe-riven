@@ -1,4 +1,4 @@
-# vue-warframe-riven
+# warframe-riven
 
 Built with Vue.js CDN, Semantic UI and Axios to get HTTP requests
 
