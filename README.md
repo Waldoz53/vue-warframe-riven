@@ -9,5 +9,6 @@ To-Do:
 1. Add the basic listing of all listed items - DONE!
 2. Clean up UI/UX - DONE!
 3. Organize the listing of all listed items - DONE!
-4. Add search/filter functionality - half done! search filter works, clickable filters not implemented yet
-5. Add listings for the remaining console versions as well (Xbox One, PS4, Switch)
+4. Add search functionality - DONE!
+5. Add listings for the remaining console versions as well (Xbox One, PS4, Switch) - DONE!
+6. Add responsiveness for mobile platforms
