@@ -4,14 +4,20 @@
     <meta charset="utf-8">
     <title>Warframe Rivens by Waldoz53</title>
     <link rel="stylesheet" href="./styles.css">
-    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
   </head>
   <body>
+    <div class="ui container">
+      <h1 class="ui huge center aligned header">Warframe Rivens</h1>
 
-    <h1>Warframe Rivens</h1>
-
-    <div id="app">
-        <table class="rivens">
+      <div id="app">
+        <div class="ui input">
+          <input type="text" placeholder="Search by Riven Compatibility">
+          <button class="right attached ui violet button">
+            Search
+          </button>
+        </div>
+        <table class="ui celled selectable padded striped center aligned table">
           <tr>
             <th>Type</th>
             <th>Compatibility</th>
@@ -33,7 +39,9 @@
             <td>{{ item.pop }}</td>
           </tr>
         </table>
+      </div>
     </div>
+
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
