@@ -12,33 +12,30 @@
 
       <div id="app">
         <div class="ui input">
-          <input type="text" placeholder="Search by Riven Compatibility">
-          <button class="right attached ui violet button">
-            Search
-          </button>
+          <input type="text" v-model='search' placeholder="Search">
         </div>
-        <table class="ui celled selectable padded striped center aligned table">
-          <tr>
-            <th>Type</th>
-            <th>Compatibility</th>
-            <th>Rerolled</th>
-            <th>Average Price</th>
-            <th>+/-</th>
-            <th>Min. Price</th>
-            <th>Max. Price</th>
-            <th>Popularity</th>
-          </tr>
-          <tr v-for="item in info">
-            <td>{{ item.itemType }}</td>
-            <td>{{ item.compatibility }}</td>
-            <td>{{ item.rerolled }}</td>
-            <td>{{ Math.round(item.avg) }}</td>
-            <td>{{ Math.round(item.stddev) }}</td>
-            <td>{{ Math.round(item.min) }}</td>
-            <td>{{ Math.round(item.max) }}</td>
-            <td>{{ item.pop }}</td>
-          </tr>
-        </table>
+        <div class="ui centered grid">
+          <div class="three wide column"><h4>Type</h4></div>
+          <div class="two wide column"><h4>Compatibility</h4></div>
+          <div class="column"><h4>Rerolled?</h4></div>
+          <div class="two wide column"><h4>Average Price</h4></div>
+          <div class="column"><h4>+/-</h4></div>
+          <div class="two wide column"><h4>Minimum Price</h4></div>
+          <div class="two wide column"><h4>Maximum Price</h4></div>
+          <div class="column"><h4>Popularity</h4></div>
+        </div>
+        <div class="ui centered grid" v-for="item in filteredItems">
+          <div class="row">
+            <div class="three wide column"><p>{{ item.itemType }}</p></div>
+            <div class="two wide column"><p>{{ item.compatibility }}</p></div>
+            <div class="column"><p>{{ item.rerolled }}</p></div>
+            <div class="two wide column"><p>{{ Math.round(item.avg * 100) / 100 }}</p></div>
+            <div class="column"><p>{{ Math.round(item.stddev * 100) / 100 }}</p></div>
+            <div class="two wide column"><p>{{ Math.round(item.min * 100) / 100 }}</p></div>
+            <div class="two wide column"><p>{{ Math.round(item.max * 100) / 100 }}</p></div>
+            <div class="column"><p>{{ Math.round(item.pop * 100) / 100 }}</p></div>
+          </div>
+        </div>
       </div>
     </div>
 

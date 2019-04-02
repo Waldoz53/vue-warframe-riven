@@ -1,15 +1,20 @@
 var app = new Vue({
   el: '#app',
   data: {
-    info: '',
+    search: '',
+    info: [],
     url: "http://n9e5v4d8.ssl.hwcdn.net/repos/weeklyRivensPC.json"
   },
-  methods: {
-
+  computed: {
+    filteredItems: function() {
+      return this.info.filter((item) => {
+        if (item.compatibility != null) {
+          return item.compatibility.match(this.search.toUpperCase())
+        }
+      });
+    }
   },
-  mounted() {
-    axios
-      .get(this.url)
-      .then(response => (this.info = response.data))
+  created() {
+    axios.get(this.url).then(response => (this.info = response.data))
   }
 })
