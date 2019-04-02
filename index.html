@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Warframe Rivens by Waldoz53</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+  </head>
+  <body>
+
+    <h1>Warframe Rivens</h1>
+
+    <div id="app">
+        <table class="rivens">
+          <tr>
+            <th>Type</th>
+            <th>Compatibility</th>
+            <th>Rerolled</th>
+            <th>Average Price</th>
+            <th>+/-</th>
+            <th>Min. Price</th>
+            <th>Max. Price</th>
+            <th>Popularity</th>
+          </tr>
+          <tr v-for="item in info">
+            <td>{{ item.itemType }}</td>
+            <td>{{ item.compatibility }}</td>
+            <td>{{ item.rerolled }}</td>
+            <td>{{ Math.round(item.avg) }}</td>
+            <td>{{ Math.round(item.stddev) }}</td>
+            <td>{{ Math.round(item.min) }}</td>
+            <td>{{ Math.round(item.max) }}</td>
+            <td>{{ item.pop }}</td>
+          </tr>
+        </table>
+    </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>
