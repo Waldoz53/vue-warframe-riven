@@ -1,6 +1,6 @@
 # vue-warframe-riven
 
-Built with Vue.js CDN
+Built with Vue.js CDN, Semantic UI and Axios to get HTTP requests
 
 A tool to find current and average prices (in platinum) for Riven Mods in Warframe, using the new public JSON files.
 The API is updated automatically weekly.
