@@ -16,20 +16,20 @@
           <button class="ui green button" v-on:click="loadXB1">Xbox</button>
           <button class="ui red button" v-on:click="loadSwitch">Switch</button>
         </div><br>
-        <div class="ui input">
+        <div class="ui big input">
           <input type="text" v-model='search' placeholder="Search">
         </div>
-        <div class="ui centered grid">
+        <div class="ui grid">
           <div class="three wide column"><h4>Type</h4></div>
           <div class="two wide column"><h4>Compatibility</h4></div>
           <div class="two wide column"><h4>Rerolled?</h4></div>
-          <div class="two wide column"><h4>Average Price</h4></div>
-          <div class="column"><h4>+/-</h4></div>
-          <div class="two wide column"><h4>Minimum Price</h4></div>
-          <div class="two wide column"><h4>Maximum Price</h4></div>
-          <div class="two wide column"><h4>Popularity</h4></div>
+          <div class="two wide column pointer" v-on:click="sortByAvg"><h4>Average Price</h4></div>
+          <div class="column pointer" v-on:click="sortByStdDev"><h4>+/-</h4></div>
+          <div class="two wide column pointer" v-on:click="sortByMin"><h4>Minimum Price</h4></div>
+          <div class="two wide column pointer" v-on:click="sortByMax"><h4>Maximum Price</h4></div>
+          <div class="two wide column pointer" v-on:click="sortByPop"><h4>Popularity</h4></div>
         </div>
-        <div class="ui centered grid" v-for="item in filteredItems">
+        <div class="ui grid" v-for="item in filteredItems">
           <div class="row">
             <div class="three wide column"><p>{{ item.itemType }}</p></div>
             <div class="two wide column"><p>{{ item.compatibility }}</p></div>
