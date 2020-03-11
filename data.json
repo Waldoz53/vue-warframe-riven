@@ -12,6 +12,10 @@
     "question3": {
       "question": "test trial?",
       "answer": "sure"
+    },
+    "question4": {
+      "question": "did question 4 break everything?",
+      "answer": "hopefully not!"
     }
   },
   "1": {
